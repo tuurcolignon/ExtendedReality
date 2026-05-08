@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-9.7418 -8.5455 -18.0256 18.3670 4.9792 23.8609" area="159" targetId="9e440afcd4de4fae93ba1f2f0a84ecae" name="benedengroept" pathAuthoring="9e440afcd4de4fae93ba1f2f0a84ecae_authoring.glb" pathOcclusion="9e440afcd4de4fae93ba1f2f0a84ecae_occlusion.3dt" pathNavMesh="9e440afcd4de4fae93ba1f2f0a84ecae_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

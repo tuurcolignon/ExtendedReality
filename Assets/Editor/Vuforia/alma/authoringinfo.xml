@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-26.0801 -5.7743 -21.7802 18.3394 7.3340 9.3288" area="84" targetId="c254e073991b46748442a98c818cb492" name="alma" pathAuthoring="c254e073991b46748442a98c818cb492_authoring.glb" pathOcclusion="c254e073991b46748442a98c818cb492_occlusion.3dt" pathNavMesh="c254e073991b46748442a98c818cb492_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

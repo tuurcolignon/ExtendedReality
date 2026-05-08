@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-38.3222 -5.0071 -30.2690 -8.5787 3.7590 0.4602" area="113" targetId="ac3e00ad9ca4476fb4991bfbc8b2f04b" name="inkomst" pathAuthoring="ac3e00ad9ca4476fb4991bfbc8b2f04b_authoring.glb" pathOcclusion="ac3e00ad9ca4476fb4991bfbc8b2f04b_occlusion.3dt" pathNavMesh="ac3e00ad9ca4476fb4991bfbc8b2f04b_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

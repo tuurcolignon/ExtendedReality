@@ -18,4 +18,4 @@ A scalable, markerless Augmented Reality indoor navigation system. The applicati
 * **Engine:** Unity 2022 LTS
 * **AR SDK:** Vuforia Engine (Area Targets)
 * **AI:** Unity AI Navigation package (`NavMeshSurface`, `NavMeshAgent`)
-* **Platform:** Android / iOS
+* **Platform:** Android / iOS 

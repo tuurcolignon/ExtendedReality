@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-21.7604 -11.9937 -13.5705 13.7982 4.0378 19.2690" area="104" targetId="feef8470b38f46b6aaace3da51e410fd" name="Cafetaria_Oscar_V1" pathAuthoring="feef8470b38f46b6aaace3da51e410fd_authoring.glb" pathOcclusion="feef8470b38f46b6aaace3da51e410fd_occlusion.3dt" pathNavMesh="feef8470b38f46b6aaace3da51e410fd_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-8.6347 -4.0487 -15.2784 23.5683 9.3268 17.5990" area="119" targetId="1a6c0793873f41718a57eb9a63c8274b" name="vendingmachinesV1" pathAuthoring="1a6c0793873f41718a57eb9a63c8274b_authoring.glb" pathOcclusion="1a6c0793873f41718a57eb9a63c8274b_occlusion.3dt" pathNavMesh="1a6c0793873f41718a57eb9a63c8274b_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

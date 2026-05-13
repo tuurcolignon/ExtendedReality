@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="3.1166 -5.3514 -36.5080 50.3729 11.7207 6.8293" area="109" targetId="059943bd609d48d48d9fb16118eaaa65" name="1039ingang" pathAuthoring="059943bd609d48d48d9fb16118eaaa65_authoring.glb" pathOcclusion="059943bd609d48d48d9fb16118eaaa65_occlusion.3dt" pathNavMesh="059943bd609d48d48d9fb16118eaaa65_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

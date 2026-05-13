@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-15.2336 -2.7748 -18.5520 -1.5532 2.3978 -0.3886" area="43" targetId="fc302bc0711c4010aa84a8d522a08034" name="toiletbenedengang" pathAuthoring="fc302bc0711c4010aa84a8d522a08034_authoring.glb" pathOcclusion="fc302bc0711c4010aa84a8d522a08034_occlusion.3dt" pathNavMesh="fc302bc0711c4010aa84a8d522a08034_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

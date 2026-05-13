@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-10.1124 -2.8891 -16.2351 10.4686 1.9553 8.1703" area="101" targetId="1e5a4464f83b475da6e72795e312064e" name="ingangV2" pathAuthoring="1e5a4464f83b475da6e72795e312064e_authoring.glb" pathOcclusion="1e5a4464f83b475da6e72795e312064e_occlusion.3dt" pathNavMesh="1e5a4464f83b475da6e72795e312064e_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

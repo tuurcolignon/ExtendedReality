@@ -123,6 +123,7 @@ public class NavigationController : MonoBehaviour
 
             // FORCE calculation on next frame by tricking the distance check
             lastCalculatedCameraPos = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
+            nextRecalcTime = 0f;
         }
     }
     public void OnTargetLost()
@@ -217,7 +218,6 @@ public class NavigationController : MonoBehaviour
         {
             isTrackingLostTimerActive = false;
             trackingState = TrackingState.Lost;
-            currentTarget = null;
             if (pathArrows != null) pathArrows.DrawPath(new Vector3[0]);
             LogDebug("Tracking timeout reached. Path cleared.");
         }

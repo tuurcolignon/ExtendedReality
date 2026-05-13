@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-17.5096 -8.6143 -31.2208 21.4526 3.2603 11.0289" area="181" targetId="90532ee814584b09bcdcb8ee5d531b4d" name="ingangTotBringMeBox" pathAuthoring="90532ee814584b09bcdcb8ee5d531b4d_authoring.glb" pathOcclusion="90532ee814584b09bcdcb8ee5d531b4d_occlusion.3dt" pathNavMesh="90532ee814584b09bcdcb8ee5d531b4d_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

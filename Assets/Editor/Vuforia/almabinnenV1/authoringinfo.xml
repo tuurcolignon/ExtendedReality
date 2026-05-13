@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-9.9591 -4.8157 -7.4407 12.0797 3.6872 9.2575" area="80" targetId="e256dc6653b8424f9c3e38b704f581a3" name="almabinnenV1" pathAuthoring="e256dc6653b8424f9c3e38b704f581a3_authoring.glb" pathOcclusion="e256dc6653b8424f9c3e38b704f581a3_occlusion.3dt" pathNavMesh="e256dc6653b8424f9c3e38b704f581a3_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>

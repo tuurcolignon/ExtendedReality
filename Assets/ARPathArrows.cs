@@ -9,60 +9,81 @@ public class ARPathArrows : MonoBehaviour
     public float spacing = 1.0f; 
     [Tooltip("Lifts the arrows off the floor to prevent clipping")]
     public float heightOffset = 0.05f; 
-    [Tooltip("Fixes imported models that don't point forward (e.g., try 0, 90, 0)")]
+    [Tooltip("Fixes imported models that don't point forward (e.g., try 90, 90, 0)")]
     public Vector3 rotationOffset = Vector3.zero; 
     [Tooltip("Global scale adjustment for the arrows")]
-    public float arrowScale = 1.0f;
+    public float arrowScale = 30f;
 
     private List<GameObject> arrowPool = new List<GameObject>();
     private int activeArrows = 0;
+    private MaterialPropertyBlock arrowPropertyBlock;
+
+    private void Awake()
+    {
+        arrowPropertyBlock = new MaterialPropertyBlock();
+    }
 
     public void DrawPath(Vector3[] pathCorners)
     {
         activeArrows = 0;
         
-        // Immediately clear arrows if the path is invalid or empty
         if (pathCorners == null || pathCorners.Length < 2) 
         { 
             HideUnusedArrows(); 
             return; 
         }
 
-        float distanceSinceLastArrow = spacing; 
-        Vector3 previousCorner = pathCorners[0];
-        
-        // Elevate the starting point
-        previousCorner.y += heightOffset;
-
-        for (int i = 1; i < pathCorners.Length; i++)
+        float totalPathLength = 0f;
+        for (int i = 0; i < pathCorners.Length - 1; i++)
         {
-            Vector3 currentCorner = pathCorners[i];
-            
-            // Elevate the current corner
-            currentCorner.y += heightOffset;
+            totalPathLength += Vector3.Distance(pathCorners[i], pathCorners[i + 1]);
+        }
 
-            float segmentLength = Vector3.Distance(previousCorner, currentCorner);
-            Vector3 segmentDirection = (currentCorner - previousCorner).normalized;
+        // Start 'spacing' meters away so the first arrow doesn't spawn inside the camera
+        float distanceToNextArrow = spacing; 
+        float cumulativeDistance = 0f;
 
-            float distanceCovered = 0;
+        for (int i = 0; i < pathCorners.Length - 1; i++)
+        {
+            Vector3 startCorner = pathCorners[i];
+            Vector3 endCorner = pathCorners[i + 1];
 
-            while (distanceCovered + distanceSinceLastArrow <= segmentLength)
+            // Elevate both corners to prevent floor clipping
+            startCorner.y += heightOffset;
+            endCorner.y += heightOffset;
+
+            float segmentLength = Vector3.Distance(startCorner, endCorner);
+            Vector3 segmentDirection = (endCorner - startCorner).normalized;
+
+            float distanceCoveredOnSegment = 0f;
+
+            // Spawn arrows as long as they fit within the current segment
+            while (distanceCoveredOnSegment + distanceToNextArrow <= segmentLength)
             {
-                distanceCovered += spacing - distanceSinceLastArrow;
-                Vector3 spawnPosition = previousCorner + segmentDirection * distanceCovered;
+                distanceCoveredOnSegment += distanceToNextArrow;
+                Vector3 spawnPosition = startCorner + segmentDirection * distanceCoveredOnSegment;
                 
-                PositionArrow(spawnPosition, segmentDirection);
-                distanceSinceLastArrow = 0;
+                float currentCumulativeDistance = cumulativeDistance + distanceCoveredOnSegment;
+                float t = totalPathLength > 0f ? currentCumulativeDistance / totalPathLength : 1f;
+                Color arrowColor = Color.Lerp(Color.red, Color.green, t);
+
+                PositionArrow(spawnPosition, segmentDirection, arrowColor);
+                
+                // Reset timer for the next arrow
+                distanceToNextArrow = spacing;
             }
 
-            distanceSinceLastArrow += (segmentLength - distanceCovered);
-            previousCorner = currentCorner;
+            // Calculate how much distance is left on this segment, 
+            // and subtract it from the wait time for the next arrow
+            float remainingOnSegment = segmentLength - distanceCoveredOnSegment;
+            distanceToNextArrow -= remainingOnSegment;
+
+            cumulativeDistance += segmentLength;
         }
 
         HideUnusedArrows();
     }
-
-    private void PositionArrow(Vector3 position, Vector3 direction)
+    private void PositionArrow(Vector3 position, Vector3 direction, Color color)
     {
         GameObject arrow;
         
@@ -89,6 +110,8 @@ public class ARPathArrows : MonoBehaviour
             arrow.transform.rotation = baseRotation * Quaternion.Euler(rotationOffset);
         }
 
+        ApplyArrowColor(arrow, color);
+
         activeArrows++;
     }
 
@@ -98,5 +121,19 @@ public class ARPathArrows : MonoBehaviour
         {
             arrowPool[i].SetActive(false);
         }
+    }
+
+    private void ApplyArrowColor(GameObject arrow, Color color)
+    {
+        Renderer arrowRenderer = arrow.GetComponentInChildren<Renderer>();
+        if (arrowRenderer == null)
+        {
+            return;
+        }
+
+        arrowPropertyBlock.Clear();
+        arrowPropertyBlock.SetColor("_Color", color);
+        arrowPropertyBlock.SetColor("_BaseColor", color);
+        arrowRenderer.SetPropertyBlock(arrowPropertyBlock);
     }
 }

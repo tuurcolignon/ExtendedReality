@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-8.4431 -1.6591 -9.8620 18.5065 6.5230 9.4430" area="36" targetId="33aa184b8b774af5bc055e5e89ad2db7" name="gangAlma" pathAuthoring="33aa184b8b774af5bc055e5e89ad2db7_authoring.glb" pathOcclusion="33aa184b8b774af5bc055e5e89ad2db7_occlusion.3dt" pathNavMesh="33aa184b8b774af5bc055e5e89ad2db7_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>
